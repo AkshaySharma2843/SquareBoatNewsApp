@@ -12,6 +12,8 @@ class NewsRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ) {
 
-    fun getNews(pageSize: Int) = performNetworkOperation { remoteDataSource.getHomeNews(pageSize) }
+    fun getHeadlines(pageSize : Int) = performNetworkOperation {
+        remoteDataSource.getHomeNews(pageSize)
+    }
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/clNews"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -16,15 +17,18 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
+            style="@style/NewsFontMedium"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="16dp"
+            android:maxLines="1"
             android:text="News Source"
             android:textSize="@dimen/dp_16"
             android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/tv_news_headline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_10"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_news_headline"
@@ -45,18 +49,20 @@
             android:layout_height="120dp"
             android:layout_marginTop="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            style="@style/NewsFontRegular"
             android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
+            style="@style/NewsFontRegular"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/label_10_min_ago"
-            android:layout_marginTop="@dimen/dp_10"
             android:textSize="@dimen/dp_10"
+            app:layout_constraintEnd_toStartOf="@+id/iv_news"
             app:layout_constraintStart_toStartOf="@+id/tv_news_headline"
             app:layout_constraintTop_toBottomOf="@+id/tv_news_headline" />
 

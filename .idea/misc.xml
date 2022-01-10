@@ -9,10 +9,14 @@
         <entry key="app/src/main/res/drawable/ic_baseline_search.xml" value="0.3384615384615385" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/bottom_sheet_country.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/bottom_sheet_filter.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.32760416666666664" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/item_country.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.22327898550724637" />
       </map>
     </option>
   </component>

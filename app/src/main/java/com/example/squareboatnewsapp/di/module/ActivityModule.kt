@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.squareboatnewsapp.data.repo.NewsRepository
 import com.example.squareboatnewsapp.ui.base.BaseActivity
-import com.example.squareboatnewsapp.ui.home.HomeViewModel
 import com.example.squareboatnewsapp.ui.main.MainViewModel
 import com.example.squareboatnewsapp.utils.common.ViewModelProviderFactory
 import dagger.Module

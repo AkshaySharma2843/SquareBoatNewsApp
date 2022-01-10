@@ -13,4 +13,6 @@
     <string name="label_news_source">News Source</string>
     <string name="label_date_details">22 sep, 2020 at 4:55 PM</string>
     <string name="label_see_full_story"><![CDATA[See full story >]]></string>
+    <string name="choose_your_location">Choose your location</string>
+    <string name="filter_by_sources">Filter by sources</string>
 </resources>

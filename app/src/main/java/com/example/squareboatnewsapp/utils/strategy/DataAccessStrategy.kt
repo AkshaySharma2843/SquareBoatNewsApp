@@ -12,18 +12,21 @@ import kotlinx.coroutines.Dispatchers
  */
 
 fun<A> performNetworkOperation(networkCall : suspend () -> Resource<A>) : LiveData<Resource<A>> =
-    liveData(Dispatchers.IO){
-        emit(Resource.loading())
-        val response = networkCall.invoke()
-        when(response.status){
-            Resource.Status.ERROR -> {
-                val data = MutableLiveData<Resource<A>>()
-                data.postValue(Resource.error(response.message ?: "error"))
-                emitSource(data)
+        liveData(Dispatchers.IO) {
+            val response = networkCall.invoke()
+            when (response.status) {
+                Resource.Status.ERROR -> {
+                    val data = MutableLiveData<Resource<A>>()
+                    data.postValue(Resource.error(response.message ?: "error"))
+                    emitSource(data)
+                }
+                Resource.Status.SUCCESS -> {
+                    emit(Resource.success(response.data!!))
+                }
+                else -> throw IllegalStateException("No State For This")
             }
-            Resource.Status.SUCCESS -> {
-                emit(Resource.success(response.data!!))
-            }
-            else -> throw IllegalStateException("No State For This")
         }
-    }
+
+
+
+

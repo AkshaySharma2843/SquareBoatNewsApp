@@ -8,4 +8,5 @@ import com.example.squareboatnewsapp.ui.base.BaseViewModel
  * @Date: 09/01/22
  */
 class DetailsViewModel(newsRepository: NewsRepository) : BaseViewModel() {
+
 }

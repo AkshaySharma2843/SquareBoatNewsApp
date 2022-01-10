@@ -32,6 +32,47 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="ivBack, tvSearch"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="toolbar, groupLocation"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_marginHorizontal="@dimen/dp_8"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSearch"
+            style="@style/NewsFontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_location"
             style="@style/NewsFontMedium"
@@ -68,6 +109,12 @@
             app:layout_constraintStart_toEndOf="@+id/iv_location"
             app:layout_constraintTop_toTopOf="@+id/iv_location" />
 
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="iv_location, tv_country_name, tv_location"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <fragment
@@ -83,5 +130,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/news_navigation" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

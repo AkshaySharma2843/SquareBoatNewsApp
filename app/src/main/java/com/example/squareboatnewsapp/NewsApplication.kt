@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.squareboatnewsapp.di.component.ApplicationComponent
 import com.example.squareboatnewsapp.di.component.DaggerApplicationComponent
 import com.example.squareboatnewsapp.di.module.ApplicationModule
+import timber.log.Timber
 
 class NewsApplication : Application() {
 
@@ -11,6 +12,7 @@ class NewsApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        Timber.plant(Timber.DebugTree())
         injectDependencies()
     }
 

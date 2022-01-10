@@ -13,8 +13,6 @@ import java.util.concurrent.TimeUnit
  */
 object Networking {
 
-    private const val NETWORK_CALL_TIMEOUT = 60
-
     fun create(baseUrl: String): NewsService {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -23,11 +21,8 @@ object Networking {
                     .addInterceptor(
                         HttpLoggingInterceptor()
                         .apply {
-                            level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
-                            else HttpLoggingInterceptor.Level.BODY
+                            level = HttpLoggingInterceptor.Level.BODY
                         })
-                    .readTimeout(NETWORK_CALL_TIMEOUT.toLong(), TimeUnit.SECONDS)
-                    .writeTimeout(NETWORK_CALL_TIMEOUT.toLong(), TimeUnit.SECONDS)
                     .build()
             )
             .addConverterFactory(GsonConverterFactory.create())
