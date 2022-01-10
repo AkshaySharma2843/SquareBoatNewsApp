@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="NewsFontRegular" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/helveticaneue_regular</item>
+    </style>
+
+    <style name="NewFontBold" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/helveticaneue_bold</item>
+    </style>
+
+    <style name="NewsFontMedium" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/helveticaneue_medium</item>
+    </style>
+</resources>

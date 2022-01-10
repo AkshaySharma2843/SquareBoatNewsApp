@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SquareBoatNewsApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mynews_title">MyNEWS</string>
+    <string name="label_location">Location</string>
+    <string name="label_coutry">India</string>
+    <string name="search_for_news_topics">Search for news topics...</string>
+    <string name="label_top_headlines">Top Headlines</string>
+    <string name="label_sort">Sort :</string>
+    <string name="label_example_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mllamco lap ex ea commodo consequat.</string>
+    <string name="label_10_min_ago">10 min ago</string>
+    <string name="label_news_source">News Source</string>
+    <string name="label_date_details">22 sep, 2020 at 4:55 PM</string>
+    <string name="label_see_full_story"><![CDATA[See full story >]]></string>
+</resources>
