@@ -17,7 +17,8 @@ import com.example.squareboatnewsapp.utils.common.Resource
 import com.example.squareboatnewsapp.utils.constants.UrlConstants
 import javax.inject.Inject
 
-class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate), View.OnClickListener, OnNewsClickListener {
+class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate),
+    View.OnClickListener, OnNewsClickListener {
 
     private var pageCount = 10
     private var isScrolling = false
@@ -26,7 +27,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
     var scrollOutItems: Int = 0
     private var newsArticleList = ArrayList<NewsArticleResponse.Article>()
     private var headlinesAdapter = HomeHeadlinesAdapter(this)
-    private var navController : NavController?= null
+    private var navController: NavController? = null
 
     @Inject
     lateinit var mainViewModel: MainViewModel
@@ -34,7 +35,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
     var linearLayoutManager: LinearLayoutManager? = null
 
 
-    override fun injectDependencies(fragmentComponent: FragmentComponent) = fragmentComponent.inject(this)
+    override fun injectDependencies(fragmentComponent: FragmentComponent) =
+        fragmentComponent.inject(this)
 
     override fun setupView() {
         linearLayoutManager = LinearLayoutManager(requireContext())
@@ -53,7 +55,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
 
     private fun observeCountryRefresh() {
         UrlConstants.toRefreshData.observe(viewLifecycleOwner, {
-            if(it){
+            if (it) {
                 pageCount = 10
                 newsArticleList.clear()
                 getLatestHeadlines()
@@ -71,11 +73,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
     }
 
     private fun observeRecyclerViewScrolling() {
-        val recyclerViewScroller = object : RecyclerView.OnScrollListener(){
+        val recyclerViewScroller = object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                if(newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL)
-                {
+                if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
                     isScrolling = true
                 }
             }
@@ -85,8 +86,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
                 currentItems = linearLayoutManager!!.childCount
                 totalItems = linearLayoutManager!!.itemCount
                 scrollOutItems = linearLayoutManager!!.findFirstVisibleItemPosition()
-                if(isScrolling && (currentItems + scrollOutItems == totalItems))
-                {
+                if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
                     isScrolling = false
                     pageCount += 10
                     getLatestHeadlines()
@@ -98,8 +98,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
 
 
     private fun getLatestHeadlines() {
-        viewModel.getLatestHeadlines(pageCount).observe(viewLifecycleOwner, {
-            when(it.status){
+        viewModel.getLatestHeadlines(pageCount).observe(viewLifecycleOwner) {
+            when (it.status) {
                 Resource.Status.SUCCESS -> {
                     mainViewModel.newsArticleResponse = it.data
                     it.data?.article?.let { articles ->
@@ -115,11 +115,11 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
 
                 }
             }
-        })
+        }
     }
 
     override fun onClick(view: View?) {
-        when(view?.id){
+        when (view?.id) {
             R.id.et_search -> {
                 (activity as MainActivity).hideLocation()
                 navController?.navigate(R.id.action_homeFragment_to_searchFragment)
