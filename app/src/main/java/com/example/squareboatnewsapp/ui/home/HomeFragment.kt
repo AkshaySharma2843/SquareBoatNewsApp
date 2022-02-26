@@ -54,7 +54,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
     }
 
     private fun observeCountryRefresh() {
-        UrlConstants.toRefreshData.observe(viewLifecycleOwner, {
+        UrlConstants.toRefreshData.observe(viewLifecycleOwner) {
             if (it) {
                 pageCount = 10
                 newsArticleList.clear()
@@ -62,7 +62,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHo
                 mainViewModel.changeCountry()
                 UrlConstants.toRefreshData.postValue(false)
             }
-        })
+        }
     }
 
     private fun setupRecycler() {
